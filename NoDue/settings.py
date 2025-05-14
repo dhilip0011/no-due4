@@ -131,10 +131,10 @@ WSGI_APPLICATION = 'NoDue.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST'),
+        'NAME': config('DB_NAME', default='default_db_name'),
+        'USER': config('DB_USER', default='default_user'),
+        'PASSWORD': config('DB_PASSWORD', default='default_password'),
+        'HOST': config('DB_HOST', default='localhost'),
         'PORT': '5432',
     }
 }
